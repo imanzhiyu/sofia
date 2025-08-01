@@ -1,0 +1,59 @@
+<!--
+ * @FilePath: nature/personal_page/templates/research.html
+ * @Author: Joel
+ * @Date: 2025-07-30 14:32:26
+ * @LastEditTime: 2025-08-01 14:04:39
+ * @Description: 研究成果
+ -->
+{% extends "layout.html" %}
+
+{% block title %}Research | My Homepage{% endblock %}
+{% block body_class %}content-page{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="section-title">📚 Publications({{paper_count}})</h2>
+
+    <!-- First Author -->
+    {% for paper in papers if paper.is_first_author %}
+    <div class="card"
+         {% if paper.url %}onclick="window.open('{{ paper.url }}', '_blank')" style="cursor: pointer;" {% endif %}>
+        <div class="card-title">{{ paper.title }}</div>
+        <div class="card-meta">{{ paper.authors }} ({{ paper.year }})</div>
+        <div class="card-desc"><em>{{ paper.journal }}</em></div>
+
+        {% if not paper.url or paper.url.startswith('https://doi.org/10.xxx/xxx') %}
+        <div class="card-note" style="color: gray; font-style: italic;">⚠️ 暂无外部链接</div>
+        {% endif %}
+    </div>
+    {% endfor %}
+
+    <!-- Co-author -->
+    {% for paper in papers if not paper.is_first_author %}
+    <div class="card"
+         {% if paper.url %}onclick="window.open('{{ paper.url }}', '_blank')" style="cursor: pointer;" {% endif %}>
+        <div class="card-title">{{ paper.title }}</div>
+        <div class="card-meta">{{ paper.authors }} ({{ paper.year }})</div>
+        <div class="card-desc"><em>{{ paper.journal }}</em></div>
+
+        {% if not paper.url or paper.url.startswith('https://doi.org/10.xxx/xxx') %}
+        <div class="card-note">⚠️ 暂无外部链接</div>
+        {% endif %}
+
+    </div>
+    {% endfor %}
+
+    <!-- ResearchGate 链接 -->
+    <div class="card" onclick="window.open('https://www.researchgate.net/profile/Yao-Li-89', '_blank')"
+         style="cursor: pointer;">
+        <div class="card-title">More on ResearchGate →</div>
+        <div class="card-meta"><a href="https://www.researchgate.net/profile/Yao-Li-89" target="_blank">https://www.researchgate.net/profile/Yao-Li-89</a>
+        </div>
+        <div class="card-desc">Full publication list</div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+

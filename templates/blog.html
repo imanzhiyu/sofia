@@ -1,0 +1,30 @@
+<!--
+ * @FilePath: nature/personal_page/templates/blog.html
+ * @Author: Joel
+ * @Date: 2025-07-30 14:32:39
+ * @LastEditTime: 2025-07-31 23:15:47
+ * @Description: 博客
+ -->
+{% extends "layout.html" %}
+{% block title %}Blog | My Homepage{% endblock %}
+{% block body_class %}content-page{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>📝 My Thoughts & Notes</h2>
+
+    <div class="card-container">
+        {% for post in posts %}
+        <div class="blog-card">
+            <div class="card-title">{{ post.title }}</div>
+            <div class="card-meta">Posted on {{ post.date }}</div>
+            <div class="card-summary">{{ post.summary }}</div>
+            <a class="read-more" href="{{ url_for('blog.blog_post', slug=post.filename) }}">Read more →</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+
+

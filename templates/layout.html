@@ -1,0 +1,40 @@
+<!--
+ * @FilePath: nature/personal_page/templates/layout.html
+ * @Author: Joel
+ * @Date: 2025-07-30 15:01:28
+ * @LastEditTime: 2025-07-31 15:33:46
+ * @Description: 母版模版
+ -->
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}个人主页{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    {% block extra_head %}{% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+
+{% block globe_background %}{% endblock %}
+
+{% block header %}
+{% if not hide_navbar %}
+<div class="navbar">
+    <div><a href="/">🏠 Home</a></div>
+    <div><a href="/research">Research</a> | <a href="/blog">Blog</a></div>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block content %}{% endblock %}
+
+{% block extra_footer %}{% endblock %}
+
+{% block extra_script %}
+{% endblock %}
+</body>
+</html>
+
+
+

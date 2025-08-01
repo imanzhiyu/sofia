@@ -1,0 +1,458 @@
+/**
+ * @FilePath: nature/personal_page/static/css/styles.css
+ * @Author: Joel
+ * @Date: 2025-07-30 14:57:44
+ * @LastEditTime: 2025-08-01 14:17:24
+ * @Description: 样式
+ */
+/*全局默认*/
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* 公共通用样式 */
+body.index-page {
+    font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+    background-color: #0b0c10;
+    color: #fff;
+    margin: 0;
+}
+
+body.content-page {
+    font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+    background-color: #f5f7fa;
+    margin: 0;
+}
+
+/* 主页总体布局 */
+.home-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    font-family: "Noto Sans SC", "Microsoft YaHei", sans-serif;
+}
+
+/* 左边栏 */
+.left-panel {
+    width: 20%;
+    background-color: #f8f9fa;
+    padding: 30px 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    border-right: 1px solid #ddd;
+    position: relative;
+    overflow: hidden;
+}
+
+.top-box {
+    width: 100%;
+    text-align: center;
+}
+
+.bottom-box {
+    text-align: center;
+}
+
+
+.profile-box {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.position-info {
+    margin-bottom: 15px;
+}
+
+.contact-info-horizontal {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 13px;
+    color: #333;
+    text-align: left;
+    line-height: 1.6;
+    margin: 0 0 0 35px;
+}
+
+.contact-info-horizontal .row {
+    display: flex;
+}
+
+.contact-info-horizontal .label {
+    width: 65px;
+    font-weight: bold;
+    color: #000;
+    flex-shrink: 0;
+}
+
+.contact-info-horizontal .value {
+    flex-grow: 1;
+    word-break: break-word;
+}
+
+.earth-box {
+    width: 150px;
+    height: 150px;
+    margin: 30px auto;
+}
+
+#globeCanvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
+/* 统计信息 */
+.stats-box {
+    font-size: 13px;
+    color: #333;
+    text-align: center;
+    margin-top: auto;
+}
+
+/* 主内容区域 */
+.main-panel {
+    width: 80%;
+    padding: 30px 40px;
+    height: 100vh;
+    flex-grow: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    overflow-y: auto;
+}
+
+.headline {
+    font-size: 35px;
+    color: #003366;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.subtext {
+    max-width: 850px;
+    text-align: center;
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* 导航按钮 */
+.nav-buttons {
+    display: flex;
+    gap: 70px;
+    margin-bottom: 100px;
+}
+
+.nav-link {
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 17px;
+    color: #005577;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* 模块卡片区域 */
+.module-grid {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 60px auto;
+}
+
+.module-card {
+    width: 280px;
+    height: 200px;
+    background-color: #f0f3f5;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    #color: #003366;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.05);
+    font-size: 16px;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+
+.module-card:hover {
+    background-color: #e0eaf0;
+    transform: translateY(-3px);
+}
+
+.bg-research {
+    background-image: url('../images/research.jpg');
+}
+
+.bg-blog {
+    background-image: url('../images/blog.jpg');
+}
+
+.bg-cv {
+    background-image: url('../images/cv.jpg');
+}
+
+
+/* 首页导航与结构 */
+#header {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
+.profile-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    margin-right: 1rem;
+}
+
+.name {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#nav-buttons {
+    position: fixed;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#nav-buttons button {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    border: 1px solid #ccc;
+    padding: 0.6rem 1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+    backdrop-filter: blur(6px);
+}
+
+#nav-buttons button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+    font-size: 1.2rem;
+    max-width: 80%;
+    line-height: 1.6;
+}
+
+#info-bar {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 2;
+    font-size: 0.9rem;
+    color: #bbb;
+    text-align: right;
+}
+
+/* 顶部导航栏 */
+.navbar {
+    background-color: #002244;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* 研究页和博客页容器 */
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* 博客样式 */
+.blog-entry {
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0;
+}
+
+.blog-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #003366;
+}
+
+.blog-meta {
+    color: #999;
+    font-size: 14px;
+}
+
+.blog-snippet {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #0066cc;
+    text-decoration: none;
+}
+
+/* 研究页卡片样式 */
+.section-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card-meta {
+    color: #666;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.card-desc {
+    font-size: 16px;
+}
+
+.card-note {
+    font-size: 12px;
+    color: gray;
+    font-style: italic;
+}
+
+/* Blog Card Container */
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Blog Card Style */
+.blog-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-left: 4px solid #3a8fd0;
+}
+
+.blog-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.blog-card .card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #222;
+}
+
+/* Meta (Date) */
+.blog-card .card-meta {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 0.75rem;
+}
+
+/* Summary */
+.blog-card .card-summary {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #444;
+    margin-bottom: 1rem;
+}
+
+/* Read More Link */
+.blog-card .read-more {
+    text-decoration: none;
+    font-weight: 500;
+    color: #3a8fd0;
+    font-size: 0.95rem;
+}
+
+.blog-card .read-more:hover {
+    text-decoration: underline;
+}
+
+
+

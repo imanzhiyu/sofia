@@ -1,0 +1,93 @@
+<!--
+ * @FilePath: nature/personal_page/templates/cv.html
+ * @Author: Joel
+ * @Date: 2025-07-30 16:28:30
+ * @LastEditTime: 2025-07-31 22:35:21
+ * @Description: C.V.
+ -->
+{% extends "layout.html" %}
+
+{% block title %}Curriculum Vitae | My Homepage{% endblock %}
+{% block body_class %}content-page{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="section-title">📄 Curriculum Vitae</h2>
+
+    <div class="card">
+        <div class="card-title">Personal Information</div>
+        <div class="card-desc">
+            <p><strong>Name:</strong> Yao Li (李瑶 / Sofia)</p>
+            <p><strong>Date of Birth:</strong> 1st October, 1995</p>
+            <p><strong>Nationality:</strong> Chinese</p>
+            <p><strong>Email:</strong> <a href="mailto:yao.li@utwente.nl">yao.li@utwente.nl</a></p>
+            <p><strong>ResearchGate:</strong> <a href="https://www.researchgate.net/profile/Yao-Li-89" target="_blank">Profile
+                Link</a></p>
+            <p><strong>Tel:</strong> +31 0653861385 / +86 17376590068</p>
+            <p><strong>Address:</strong> Witbreuksweg 389-402, 7522 ZA, Enschede, Netherlands</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">Education</div>
+        <ul class="card-desc">
+            <li>2025.06 – Present: PostDoc, École des Ponts ParisTech (Greenstorm Project)</li>
+            <li>2021.01 – 2025.06: PhD, University of Twente (ITC)</li>
+            <li>2017.09 – 2020.07: MSc, Hangzhou Normal University</li>
+            <li>2018.10 – 2019.03: Erasmus+, University of Maribor, Slovenia</li>
+            <li>2013.09 – 2017.07: BSc, Shihezi University</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="card-title">Skills</div>
+        <ul class="card-desc">
+            <li><strong>Languages:</strong> Chinese (native), English (fluent), Dutch (beginner)</li>
+            <li><strong>Programming:</strong> R, Python, Google Earth Engine</li>
+            <li><strong>Techniques:</strong> Machine learning, spatial-temporal analysis, flood modeling</li>
+            <li><strong>Software:</strong> SWMM, ICM, ArcGIS, ENVI, SPSS</li>
+            <li><strong>Data:</strong> Remote sensing, CMIP6, UAV, time series</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="card-title">Honors & Awards</div>
+        <ul class="card-desc">
+            <li>2020: Outstanding Graduate of Zhejiang Province</li>
+            <li>2020: Second Prize - National Innovation Program</li>
+            <li>2018: National Scholarship & Erasmus+ Grant</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="card-title">Conferences & Presentations</div>
+        <ul class="card-desc">
+            <li>2024 CNDS Summer School, Sweden</li>
+            <li>2023 NEEDS Conference, Netherlands</li>
+            <li>2023 Spatial Statistics Conference, USA</li>
+            <li>2021 Potsdam Summer School, Germany</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="card-title">Patents</div>
+        <ul class="card-desc">
+            <li>2024: Cooling Effect Quantification (Chinese Patent)</li>
+            <li>2021: Urban Waterlogging Depth Extraction (Chinese Patent)</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="card-title">References</div>
+        <div class="card-desc">
+            <p><strong>Prof. Alfred Stein</strong> (<a href="mailto:a.stein@utwente.nl">a.stein@utwente.nl</a>)</p>
+            <p><strong>Dr. Frank Badu Osei</strong> (<a href="mailto:f.b.osei@utwente.nl">f.b.osei@utwente.nl</a>)</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <p class="card-meta">📚 For full list of publications, please visit the <a href="/research">Research</a> page.
+        </p>
+    </div>
+</div>
+{% endblock %}

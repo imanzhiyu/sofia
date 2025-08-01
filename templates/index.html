@@ -1,0 +1,99 @@
+<!--
+ * @FilePath: nature/personal_page/templates/index.html
+ * @Author: Joel
+ * @Date: 2025-07-30 14:32:05
+ * @LastEditTime: 2025-08-01 14:18:26
+ * @Description: 个人主页
+ -->
+{% extends "layout.html" %}
+{% set hide_navbar = True %}
+{% block title %}个人主页 - 洪水研究博士后{% endblock %}
+{% block body_class %}home-new{% endblock %}
+
+{% block content %}
+<div class="home-container">
+    <!-- 左边栏 -->
+    <div class="left-panel">
+        <div class="top-box">
+            <div class="profile-box">
+                <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="头像" class="avatar">
+                <h2 class="name">李瑶/Sofia</h2>
+                <div class="position-info">
+                    <span class="institute">IP Paris</span>
+                    <span class="divider">/</span>
+                    <span class="title">博士后</span>
+                </div>
+
+                <div class="contact-info-horizontal">
+                    <div class="row">
+                        <div class="label">Email:</div>
+                        <div class="value">yao.li@enpc.fr</div>
+                    </div>
+                    <div class="row">
+                        <div class="label">RedNote:</div>
+                        <div class="value">
+                            <a href="https://tinyurl.com/2sy56mna" target="_blank">全宇宙最美Sofia</a>
+                        </div>
+                    </div>
+                    <!--                    <div class="row">-->
+                    <!--                        <div class="label">Git:</div>-->
+                    <!--                        <div class="value">-->
+                    <!--                            <a href="https://github.com" target="_blank">https://github.com</a>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                </div>
+            </div>
+        </div>
+        <div class="bottom-box">
+            <div class="earth-box">
+                <canvas id="globeCanvas"></canvas>
+            </div>
+            <div class="stats-box">
+                <p id="site-age">Created：-- Day -- Hour -- Minuts -- Second</p>
+                <p id="visit-count">Total Visits： {{total_visits}}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 右主内容 -->
+    <div class="main-panel">
+        <h1 class="headline">Statistical Mapping and Modelling of Urban Flood Using Social Media Data</h1>
+        <div>
+            <p class="subtext">
+                A postdoctoral researcher specializing in urban waterlogging and flood risk management, he is committed
+                to integrating data science with urban climate adaptation strategies to build safer future cities.
+            </p>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/cv" class="nav-link">C.V.</a>
+            <a href="/research" class="nav-link">Publications</a>
+            <a href="/blog" class="nav-link">Blog</a>
+        </div>
+
+        <div class="module-grid">
+            <div class="module-card bg-research" onclick="location.href='/research'">
+                <div class="module-title">🧪 Publications</div>
+            </div>
+            <div class="module-card bg-blog" onclick="location.href='/blog'">
+                <div class="module-title">📚 Blog</div>
+            </div>
+            <div class="module-card bg-cv" onclick="location.href='/cv'">
+                <div class="module-title">📄 C.V.</div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_script %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+{% endblock %}
+
+
+
+
+
+
