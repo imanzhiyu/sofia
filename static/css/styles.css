@@ -1,8 +1,8 @@
 /**
- * @FilePath: nature/personal_page/static/css/styles.css
+ * @FilePath: static/css/styles.css
  * @Author: Joel
  * @Date: 2025-07-30 14:57:44
- * @LastEditTime: 2025-08-01 14:17:24
+ * @LastEditTime: 2025-08-01 17:06:07
  * @Description: 样式
  */
 /*全局默认*/
@@ -10,6 +10,7 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
+    overflow-x: hidden
 }
 
 /* 公共通用样式 */
@@ -144,7 +145,7 @@ body.content-page {
     justify-content: space-between;
     align-items: center;
     background: #ffffff;
-    overflow-y: auto;
+    overflow: hidden;
 }
 
 .headline {
