@@ -1,8 +1,8 @@
 <!--
- * @FilePath: nature/personal_page/templates/layout.html
+ * @FilePath: templates/layout.html
  * @Author: Joel
  * @Date: 2025-07-30 15:01:28
- * @LastEditTime: 2025-07-31 15:33:46
+ * @LastEditTime: 2025-08-01 15:32:51
  * @Description: 母版模版
  -->
 <!DOCTYPE html>
@@ -12,6 +12,7 @@
     <title>{% block title %}个人主页{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mobile_styles.css') }}">
     {% block extra_head %}{% endblock %}
 </head>
 <body class="{% block body_class %}{% endblock %}">
