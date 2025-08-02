@@ -2,7 +2,7 @@
 FilePath: app.py
 Author: Joel
 Date: 2025-07-30 14:31:06
-LastEditTime: 2025-08-01 20:16:23
+LastEditTime: 2025-08-02 18:39:13
 Description: Flask
 """
 
@@ -24,6 +24,10 @@ def create_app():
     app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
     #'sqlite:///' + os.path.join(db_dir, 'site.db')
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    #防止 SSL connection closed
+    app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
+        'pool_pre_ping': True
+    }
     db.init_app(app)
 
     with app.app_context():
