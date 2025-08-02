@@ -2,10 +2,10 @@
 FilePath: routes/home.py
 Author: Joel
 Date: 2025-07-31 22:53:32
-LastEditTime: 2025-08-02 09:13:07
+LastEditTime: 2025-08-02 09:22:50
 Description: 首页 & 统计
 """
-from flask import Blueprint, render_template, request,send_file
+from flask import Blueprint, render_template, request,send_file,current_app
 from models.models import VisitStats
 from datetime import datetime,timedelta
 from utils.get_client_ip import get_client_ip
@@ -40,7 +40,7 @@ def index():
     return render_template("index.html", total_visits=total_visits)
 
 #ping
-path = os.path.join('static', 'last_visit.txt')
+path = os.path.join(current_app.root_path,'static', 'last_visit.txt')
 # 读取上次访问时间
 def read_last_visit():
     if not os.path.exists(path):
@@ -52,6 +52,7 @@ def read_last_visit():
             return None
 #更新上次访问时间
 def update_last_visit():
+    os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, 'w') as f:
         f.write(datetime.utcnow().isoformat())
 @home_bp.route('/ping')
@@ -65,7 +66,7 @@ def ping():
     if last_visit is None or (now - last_visit) > timedelta(minutes=13.5):
         update_last_visit()
         return 'pong', 200
-
+    return 'Not needed', 200
 #检查用
 @home_bp.route('/download_db')
 def download_db():
