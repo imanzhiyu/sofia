@@ -2,7 +2,7 @@
 FilePath: routes/home.py
 Author: Joel
 Date: 2025-07-31 22:53:32
-LastEditTime: 2025-08-02 08:39:38
+LastEditTime: 2025-08-02 09:13:07
 Description: 首页 & 统计
 """
 from flask import Blueprint, render_template, request,send_file
@@ -56,6 +56,10 @@ def update_last_visit():
         f.write(datetime.utcnow().isoformat())
 @home_bp.route('/ping')
 def ping():
+    secret = request.args.get('key')
+    if secret != 'Liyao123!!':
+        return "Unauthorized", 403
+    
     last_visit = read_last_visit()
     now = datetime.utcnow()
     if last_visit is None or (now - last_visit) > timedelta(minutes=13.5):
