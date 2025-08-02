@@ -1,35 +1,12 @@
 """
-FilePath: nature/personal_page/data/papers.py
+FilePath: data/papers.py
 Author: Joel
 Date: 2025-07-31 22:56:35
-LastEditTime: 2025-08-01 13:43:00
+LastEditTime: 2025-08-02 18:56:44
 Description: 论文信息结构化存储
 """
 papers = [
-    {
-        "title": "Impact of three-dimensional landscape pattern on urban flooding process",
-        "authors": "Yao Li*, Luoyang W., Badu Osei F., & Stein A.",
-        "year": "2025",
-        "journal": "Water Research",
-        "url": "https://doi.org/10.xxx/xxx",
-        "is_first_author": True
-    },
-    {
-        "title": "Changes in urban exposure to compound flood-hot extremes over China under 1.5 °C and 2 °C global warming targets",
-        "authors": "Li, Y., Wang, P.*, Badu Osei, F., & Stein, A.",
-        "year": "2024",
-        "journal": "Weather and Climate Extremes",
-        "url": "https://doi.org/10.xxx/xxx",
-        "is_first_author": True
-    },
-    {
-        "title": "Predictive Log Gaussian Cox Process modeling for urban flood mapping using social media data",
-        "authors": "Yao Li*, Badu Osei F., Erin B., & Stein A.",
-        "year": "2024",
-        "journal": "International Journal of Geographical Information Science",
-        "url": "https://doi.org/10.xxx/xxx",
-        "is_first_author": True
-    },
+
     {
         "title": "Identifying landscape patterns at different scales as driving factors for urban flooding",
         "authors": "Li, Y. *, Badu Osei, F., Hu, T., & Stein, A.",
@@ -77,14 +54,6 @@ papers = [
         "journal": "Water, 11(11), Article 2335",
         "url": "https://doi.org/10.3390/w11112335",
         "is_first_author": True
-    },
-    {
-        "title": "A multi-objective framework for regional ecological restoration: Integrating priority analysis with spatial management strategies",
-        "authors": "He J., Li Y., Zhou W., Shi X.",
-        "year": "",
-        "journal": "Environmental Research",
-        "url": "",
-        "is_first_author": False
     },
     {
         "title": "Ecological network assessment in dynamic landscapes: Multi-scenario simulation and conservation priority analysis",
@@ -187,7 +156,7 @@ papers = [
         "authors": "Hu T., Wu Y., Zheng G., Li Y.",
         "year": "2019",
         "journal": "IEEE Transactions on Geoscience and Remote Sensing",
-        "url": "",
+        "url": "https://doi.org/10.1109/TGRS.2018.2859819",
         "is_first_author": False
     },
 ]
