@@ -2,7 +2,7 @@
  * @FilePath: static/css/mobile_styles.css
  * @Author: Joel
  * @Date: 2025-08-01 15:28:04
- * @LastEditTime: 2025-08-02 19:26:08
+ * @LastEditTime: 2025-08-03 21:40:01
  * @Description: 移动端
  */
 
@@ -56,8 +56,11 @@
     gap: 5px;
     font-size: 12px;
     align-items: center;
-    margin: 0 8px 0 0;
+    margin: 0 0 0 10px;
   }
+  .contact-info-horizontal .label {
+    padding-right: 0;
+}
 
   /* 地球图缩小并居中 */
   canvas {
