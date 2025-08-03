@@ -2,7 +2,7 @@
  * @FilePath: static/css/styles.css
  * @Author: Joel
  * @Date: 2025-07-30 14:57:44
- * @LastEditTime: 2025-08-01 17:06:07
+ * @LastEditTime: 2025-08-03 21:56:30
  * @Description: 样式
  */
 /*全局默认*/
@@ -92,21 +92,25 @@ body.content-page {
     color: #333;
     text-align: left;
     line-height: 1.6;
-    margin: 0 0 0 35px;
+    margin: 0 0 0 18%;
 }
 
 .contact-info-horizontal .row {
     display: flex;
+    flex-wrap:wrap;
 }
 
 .contact-info-horizontal .label {
-    width: 65px;
+    flex:0 0 auto;
+    min-width: 65px;
     font-weight: bold;
     color: #000;
     flex-shrink: 0;
+    padding-right: 8px;
 }
 
 .contact-info-horizontal .value {
+    min-width: 100px;
     flex-grow: 1;
     word-break: break-word;
 }
@@ -145,7 +149,7 @@ body.content-page {
     justify-content: space-between;
     align-items: center;
     background: #ffffff;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .headline {
@@ -184,14 +188,15 @@ body.content-page {
 /* 模块卡片区域 */
 .module-grid {
     display: flex;
-    gap: 30px;
+    gap: 40px;
     flex-wrap: wrap;
     justify-content: center;
     margin: 60px auto;
 }
 
 .module-card {
-    width: 280px;
+    
+    width: 300px;
     height: 200px;
     background-color: #f0f3f5;
     border-radius: 12px;

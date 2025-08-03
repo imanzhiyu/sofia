@@ -2,7 +2,7 @@
 FilePath: routes/home.py
 Author: Joel
 Date: 2025-07-31 22:53:32
-LastEditTime: 2025-08-02 19:22:50
+LastEditTime: 2025-08-03 21:00:14
 Description: 首页 & 统计
 """
 import json
@@ -112,7 +112,7 @@ def ping():
     if last_visit is None or (now - last_visit) > timedelta(minutes=13.5):
         update_last_visit()
         return 'pong', 200
-    return 'Not needed', 200
+    return f'Not needed({last_visit})', 200
 #检查用
 @home_bp.route('/download_db')
 def download_db():
