@@ -2,7 +2,7 @@
  * @FilePath: static/css/styles.css
  * @Author: Joel
  * @Date: 2025-07-30 14:57:44
- * @LastEditTime: 2025-08-03 21:56:30
+ * @LastEditTime: 2025-08-04 17:03:26
  * @Description: 样式
  */
 /*全局默认*/
@@ -48,7 +48,7 @@ body.content-page {
     box-sizing: border-box;
     border-right: 1px solid #ddd;
     position: relative;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .top-box {

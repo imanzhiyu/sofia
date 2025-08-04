@@ -2,7 +2,7 @@
 FilePath: routes/home.py
 Author: Joel
 Date: 2025-07-31 22:53:32
-LastEditTime: 2025-08-03 21:00:14
+LastEditTime: 2025-08-04 17:02:11
 Description: 首页 & 统计
 """
 import json
@@ -87,15 +87,15 @@ def recover_failed_visits():
 
 #ping
 path = os.path.join('static','data', 'last_visit.txt')
-# 读取上次访问时间
-def read_last_visit():
-    if not os.path.exists(path):
-        return None
-    with open(path, 'r') as f:
-        try:
-            return datetime.fromisoformat(f.read().strip())
-        except:
-            return None
+# # 读取上次访问时间
+# def read_last_visit():
+#     if not os.path.exists(path):
+#         return None
+#     with open(path, 'r') as f:
+#         try:
+#             return datetime.fromisoformat(f.read().strip())
+#         except:
+#             return None
 #更新上次访问时间
 def update_last_visit():
     os.makedirs(os.path.dirname(path), exist_ok=True)
@@ -107,18 +107,5 @@ def ping():
     if secret != 'Liyao123!!':
         return "Unauthorized", 403
     
-    last_visit = read_last_visit()
-    now = datetime.utcnow()
-    if last_visit is None or (now - last_visit) > timedelta(minutes=13.5):
-        update_last_visit()
-        return 'pong', 200
-    return f'Not needed({last_visit})', 200
-#检查用
-@home_bp.route('/download_db')
-def download_db():
-    secret = request.args.get('key')
-    if secret != 'Liyao123!!':
-        return "Unauthorized", 403
+    return 'pong', 200
 
-    db_path = os.path.join(os.getcwd(), 'db', 'site.db')
-    return send_file(db_path, as_attachment=True)
